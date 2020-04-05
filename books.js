@@ -14,6 +14,7 @@ publisher:String,
 distributer:String,
 });
 const bookmodel= mongoose.model('books',bookSchema);
+mongoose.connect("mongodb+srv://userdb:ava1996@cluster0-6pimn.mongodb.net/test?retryWrites=true&w=majority");
 app.get('/',(req,res)=>{
     res.send("hello");
 });
