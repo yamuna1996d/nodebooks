@@ -5,16 +5,16 @@ var mongoose = require('mongoose');
 var app=express();
 
 app.use(parser.urlencoded({extended:false}));
-// const bookSchema = new mongoose.Schema({
-// title:String,
-// author:String,
-// discription:String,
-// price:Number,
-// publisher:String,
-// distributer:String
-// });
-// const bookmodel= mongoose.model('books',bookSchema);
-// mongoose.connect("mongodb+srv://userdb:ava1996@cluster0-6pimn.mongodb.net/test?retryWrites=true&w=majority");
+const bookSchema = new mongoose.Schema({
+title:String,
+author:String,
+discription:String,
+price:Number,
+publisher:String,
+distributer:String
+});
+const bookmodel= mongoose.model('books',bookSchema);
+mongoose.connect("mongodb+srv://userdb:ava1996@cluster0-6pimn.mongodb.net/test?retryWrites=true&w=majority");
 app.get('/',(req,res)=>{
     res.send("hello");
 });
