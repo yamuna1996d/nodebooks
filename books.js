@@ -40,7 +40,21 @@ app.get('/view',async (req,res)=>{
         
     }
 });
-
+app.post('/search',async(req,res)=>{
+    try {
+        bookmodel.find(req.body,(error,data)=>{
+            if(error){
+                throw error;
+            }
+            else{
+                res.send(data);
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+    }
+})
 app.listen(process.env.PORT || 3000,()=>{
     console.log("Server Started");
 });
