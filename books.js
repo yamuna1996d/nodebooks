@@ -29,6 +29,18 @@ app.post('/book',async(req,res)=>{
         res.status(500).send(error);
     }
 });
+app.get('/view',async (req,res)=>{
+    try {
+        var result=await bookmodel.find();
+        res.send(result);
+    } 
+    catch (error) {
+        console.log(error);
+        res.status(500).send(error);
+        
+    }
+});
+
 app.listen(process.env.PORT || 3000,()=>{
     console.log("Server Started");
 });
